@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HighCPShop.iml" filepath="$PROJECT_DIR$/HighCPShop.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homework6_104360073_104360058.iml" filepath="$PROJECT_DIR$/homework6_104360073_104360058.iml" />
     </modules>
   </component>
 </project>
