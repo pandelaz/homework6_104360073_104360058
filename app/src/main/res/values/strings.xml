@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HighCPShop</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="deletePerson">Confirm person deletion.</string>
+    <string name="yes">Confirm</string>
+    <string name="no">Cancel</string>
+
 </resources>
