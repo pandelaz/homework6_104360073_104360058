@@ -47,8 +47,7 @@ public class Shop_CreateOrEditActivity extends AppCompatActivity implements View
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR); getSupportActionBar().hide();
 
         ShopID = getIntent().getIntExtra(MainActivity.KEY_EXTRA_CONTACT_ID, 0);
-
-        setContentView(R.layout.shop_activity_edit);
+        setContentView(R.layout.activity_edit);
         nameEditText = (EditText) findViewById(R.id.editTextName);
         telEditText = (EditText) findViewById(R.id.editTextTele);
         addressEditText = (EditText) findViewById(R.id.editTextAddress);

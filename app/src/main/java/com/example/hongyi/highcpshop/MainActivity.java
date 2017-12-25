@@ -3,9 +3,9 @@ package com.example.hongyi.highcpshop;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class MainActivity extends AppCompatActivity {
+
 
     public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR); getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+
         status = 0;
         img = (ImageView) findViewById(R.id.imageView2);
         Button button = (Button) findViewById(R.id.addNew);
@@ -100,14 +102,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> listView, View view,
                                     int position, long id) {
                 Cursor itemCursor = (Cursor) MainActivity.this.listView.getItemAtPosition(position);
+
                 final int ShopID = itemCursor.getInt(itemCursor.getColumnIndex(ShopDBHelper.Shop_COLUMN_ID));
-
                 final String ShopName = itemCursor.getString(itemCursor.getColumnIndex(ShopDBHelper.Shop_COLUMN_NAME));
-
                 final String lat = itemCursor.getString(itemCursor.getColumnIndex(ShopDBHelper.Shop_COLUMN_LAT));
                 final String lng = itemCursor.getString(itemCursor.getColumnIndex(ShopDBHelper.Shop_COLUMN_LNG));
-
-
 
                 final String[] list_item = {"GoogleMap上顯示位置","商品目錄管理","下單管理","歷史銷售紀錄"};
                 AlertDialog.Builder dialog_list = new AlertDialog.Builder(MainActivity.this);
@@ -124,19 +123,19 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             case "商品目錄管理" :
-                                //Intent intent2 = new Intent(MainActivity.this,Main2Activity.class);
-                                //intent2.putExtra(KEY_EXTRA_CONTACT_ID, ShopID);
-                                //startActivity(intent2);
+                                Intent intent2 = new Intent(MainActivity.this,Main2Activity.class);
+                                intent2.putExtra(KEY_EXTRA_CONTACT_ID, ShopID);
+                                startActivity(intent2);
                                 break;
                             case "下單管理" :
-                                //Intent intent3 = new Intent(MainActivity.this,Main3Activity.class);
-                                //intent3.putExtra(KEY_EXTRA_CONTACT_ID, ShopID);
-                                //startActivity(intent3);
+                                Intent intent3 = new Intent(MainActivity.this,Main3Activity.class);
+                                intent3.putExtra(KEY_EXTRA_CONTACT_ID, ShopID);
+                                startActivity(intent3);
                                 break;
                             case "歷史銷售紀錄" :
-                                //Intent intent4 = new Intent(MainActivity.this,Main4Activity.class);
-                                //intent4.putExtra(KEY_EXTRA_CONTACT_ID, ShopID);
-                                //startActivity(intent4);
+                                Intent intent4 = new Intent(MainActivity.this,Main4Activity.class);
+                                intent4.putExtra(KEY_EXTRA_CONTACT_ID, ShopID);
+                                startActivity(intent4);
 
                                 break;
                         }
@@ -177,4 +176,6 @@ public class MainActivity extends AppCompatActivity {
             return listView.getChildAt(childIndex);
         }
     }
+
 }
+

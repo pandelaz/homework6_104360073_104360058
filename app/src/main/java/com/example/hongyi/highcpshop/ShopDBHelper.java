@@ -96,7 +96,7 @@ public class ShopDBHelper extends SQLiteOpenHelper {
     public Integer deleteShop(Integer id) {
         SQLiteDatabase db = this.getWritableDatabase();
         Log.d(TAG, "ShopDBHepler: deleteshop = " + String.valueOf(id));
-/*
+
         ProductDBHelper pdbhlpr = new ProductDBHelper(ctt,String.valueOf(id));
         pdbhlpr.DeleteTable();
 
@@ -116,7 +116,7 @@ public class ShopDBHelper extends SQLiteOpenHelper {
         }
 
         cdbhlpr.DeleteTable();
-*/
+
         return db.delete(Shop_TABLE_NAME,
                 Shop_COLUMN_ID + " = ? ",
                 new String[] { Integer.toString(id) });
